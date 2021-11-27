@@ -1,0 +1,14 @@
+h1 {
+    color: darkgreen;
+}
+h2 {
+    color: blue;
+}
+label {
+    font-style:italic;
+}
+textarea {
+    width: 300px;
+    height: 200px;
+
+}

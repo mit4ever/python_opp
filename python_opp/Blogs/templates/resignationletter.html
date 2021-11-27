@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+        <!-- Liên kết đến các file khác như css, hình ảnh, ... trong thư mục static -->
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+    </head>
+    <body>
+        <h1>Blogs Page </h1>
+        <ul>
+            <ul>
+                <li>
+                    <a href="/index">Blogs</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/resignationletter">Resignation Letter</a>
+                </li>
+            </ul>
+        </ul>
+        
+        <h2> {{ r1 }} </h2>
+        <form action="/resignationletter" method="post">
+            <h3>Quickly create a file of resignation letter</h3>
+            <div>
+                <label>Fullname</label>
+                <br>
+                <input type ="text" name = "fullname" >
+            </div>
+            <div>
+                <label> Reason</label>
+                <br>
+                <textarea name="reason" ></textarea>
+            </div>
+            <br>
+            <div>
+                <button type ="submit"> Create file</button>
+            </div>
+        </form>
+        <br>
+        <a href="/static/demo.docx" download="/static/demo.docx" > Download </a>

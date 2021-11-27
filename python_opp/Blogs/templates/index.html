@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+        <!-- Liên kết đến các file khác như css, hình ảnh, ... trong thư mục static -->
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+    </head>
+    <body>
+        <h1>Blogs Page </h1>
+        <ul>
+            <li>
+                <a href="/index">Blogs</a>
+            </li>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/resignationletter">Resignation Letter</a>
+            </li>
+        </ul>
+        
+        <h2>What's in your mind? </h2>
+        <form action="/index" method="post">
+            <div>
+                <label>Title</label>
+                <br>
+               
+                <input type ="text" name = "title">
+            </div>
+            <div>
+                <label> Content</label>
+                <br>
+                
+                <textarea name="content"></textarea>
+            </div>
+            <br>
+            <div>
+                <button type ="submit"> Add new post</button>
+            </div>
+        </form>
+        <h2>All post</h2>
+        {% for i in cur %}
+        =======================================================
+        <br>
+         Post at:   {{ i[3] }}
+         <br>
+            {{ i[1] }}
+        <br>
+            {{ i[2] }}
+        <br>
+        <a href="editpost/{{i[0]}}">Edit this post</a>
+        <br>
+        {% endfor %}
+    </body>
+</html>
